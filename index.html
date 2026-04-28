@@ -895,6 +895,84 @@
   #radical .sub-divider-meta { color: rgba(26,26,26,0.7); }
   #radical .sub-divider-title { color: #1a1a1a; }
 
+  /* TRADE · DISPLAY + PLANOGRAM mini-section (between segment 2 and segment 3) */
+  .trade-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  @media (max-width: 768px) {
+    .trade-display { grid-template-columns: 1fr; }
+  }
+  .trade-card {
+    border: 1px solid currentColor;
+    background: rgba(255,255,255,0.02);
+  }
+  #pixicade .trade-card,
+  #natgeo .trade-card,
+  #dk .trade-card { background: rgba(255,255,255,0.03); }
+  #barbie .trade-card,
+  #radical .trade-card,
+  #hoodeez .trade-card { background: rgba(0,0,0,0.02); }
+  .trade-card-image {
+    aspect-ratio: 16 / 9;
+    border-bottom: 1px dashed currentColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.85;
+    padding: 16px;
+  }
+  .trade-card-image svg {
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
+  }
+  .trade-card-image .ph-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .trade-card-image .ph-spec {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 80%;
+  }
+  .trade-card-body {
+    padding: 16px 18px 18px;
+  }
+  .trade-card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 6px;
+  }
+  .trade-card-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .trade-card-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    opacity: 0.78;
+    margin: 0;
+  }
+
   /* BARBIE TENTPOLE LAYOUT */
   .barbie-tentpole {
     display: grid;
@@ -1551,6 +1629,16 @@
     </symbol>
     <symbol id="icon-sparkles" viewBox="0 0 24 24">
       <path d="M 12 3 L 13.5 9 L 19.5 10.5 L 13.5 12 L 12 18 L 10.5 12 L 4.5 10.5 L 10.5 9 Z M 18 3 L 18.6 5.4 L 21 6 L 18.6 6.6 L 18 9 L 17.4 6.6 L 15 6 L 17.4 5.4 Z M 5 14 L 5.6 16.4 L 8 17 L 5.6 17.6 L 5 20 L 4.4 17.6 L 2 17 L 4.4 16.4 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-display" viewBox="0 0 24 24">
+      <path d="M 6 3 L 18 3 L 18 19 L 6 19 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M 6 7 L 18 7 M 6 11 L 18 11 M 6 15 L 18 15" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M 4.5 19 L 19.5 19 L 19.5 21 L 4.5 21 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M 9.5 3 L 9.5 1.5 L 14.5 1.5 L 14.5 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-planogram" viewBox="0 0 24 24">
+      <rect x="2.5" y="4" width="19" height="16" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M 2.5 9 L 21.5 9 M 2.5 14 L 21.5 14 M 9 4 L 9 9 M 15 4 L 15 9 M 7 9 L 7 14 M 13 9 L 13 14 M 17 9 L 17 14 M 6 14 L 6 20 M 11 14 L 11 20 M 17 14 L 17 20" fill="none" stroke="currentColor" stroke-width="1.3"/>
     </symbol>
 
     <!-- BARBIE TENTPOLE HERO ART (Magic Style Studio scene) -->
@@ -2894,7 +2982,7 @@
             <span class="badge">31M Subs</span>
           </div>
           <p>Special edition powered by viral animator Alan Becker — bringing stick-figure battles from YouTube into playable games.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$34.99</span></div>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$29.99</span></div>
         </div>
       </div>
 
@@ -2912,7 +3000,7 @@
             <span class="badge">Summer '26</span>
           </div>
           <p>Learn to draw Yoda, Darth Vader, stormtroopers and more — then play them as custom levels in the Pixicade universe.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$34.99</span></div>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$29.99</span></div>
         </div>
       </div>
 
@@ -2959,6 +3047,41 @@
             <div class="drop-card-stat"><svg style="width:11px;height:11px;"><use href="#icon-youtube"/></svg> 27M views</div>
             <div class="drop-card-sub">Beloved penguin universe arrives in-app — themed creation content for the Pixicade community.</div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
+
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Free-standing tower · Pixicade core + editions</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Pixicade Floor Display</div>
+          <p class="trade-card-desc">Branded display unit anchoring the Pixicade ecosystem — Original, Plus, Animation, Star Wars, ESPN editions in one shoppable footprint.</p>
+        </div>
+      </div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · 5 SKU lineup + digital drop callout</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Pixicade Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended shelf set with the full Pixicade line — price-tier ladder from $19.99 entry to $29.99, with side-by-side licensed editions.</p>
         </div>
       </div>
     </div>
@@ -3144,6 +3267,41 @@
       </div>
     </div>
 
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
+
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Tentpole tower · Magic Style Studio</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Barbie Floor Display</div>
+          <p class="trade-card-desc">Pink-forward end-cap display unit built around the Magic Style Studio tentpole — designed for high-traffic seasonal placement and Mattel-co-branded signage.</p>
+        </div>
+      </div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · Spring 2026 launch window</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Barbie Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended Spring '26 shelf set positioning Magic Style Studio adjacent to Barbie core toy and styling categories — driving cross-shop and gift-set adjacency.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- ========== SEGMENT 3: MEDIA & PROOF ========== -->
     <div class="segment-marker scroll-reveal" style="margin-top: 60px;">
       <span class="segment-marker-num">3</span>
@@ -3276,8 +3434,8 @@
         <div class="pull-quote">The most-trusted education brand in the world, paired with the most immersive learning technology. A category-anchor STEM tier for any toy aisle.</div>
         <div class="brand-hero-meta">
           <span class="badge solid"><span>Licensed STEM</span></span>
-          <span class="badge">7 SKUs</span>
-          <span class="badge">$39.99 – $59.99</span>
+          <span class="badge">11 SKUs</span>
+          <span class="badge">$19.99 – $59.99</span>
           <span class="badge">Ages 6+</span>
         </div>
       </div>
@@ -3288,7 +3446,7 @@
       <span class="segment-marker-num">2</span>
       <span class="segment-marker-label">Products</span>
       <span class="segment-marker-line"></span>
-      <span class="segment-marker-label">7 SKUs · 2026</span>
+      <span class="segment-marker-label">11 SKUs · 3 Tiers · 2026</span>
     </div>
 
     <div class="product-grid">
@@ -3430,6 +3588,120 @@
           <div class="price-tag"><span class="price-srp">SRP</span> <span>$39.99</span></div>
         </div>
       </div>
+
+      <!-- TIER C: SMITHSONIAN AR PUZZLES -->
+      <div class="sub-divider scroll-reveal">
+        <span class="sub-divider-num">C</span>
+        <span class="sub-divider-title">Smithsonian AR Puzzles · Spring 2026</span>
+        <span class="sub-divider-meta">$19.99 Tier · 4 SKUs</span>
+      </div>
+
+      <div class="product-card scroll-reveal">
+        <div class="product-image placeholder">
+          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
+          <div class="ph-label">AR Puzzle: Dinosaur!</div>
+          <div class="ph-spec">Box · 48 Pieces + AR</div>
+        </div>
+        <div class="product-body">
+          <div class="card-label">Smithsonian Spring 2026</div>
+          <h3>AR Puzzle:<br>Dinosaur!</h3>
+          <div class="badge-row">
+            <span class="badge">48 Pieces</span>
+            <span class="badge">AR</span>
+          </div>
+          <p>Solve the puzzle, scan it, and watch a fully-rigged dinosaur emerge from the completed board.</p>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        </div>
+      </div>
+
+      <div class="product-card scroll-reveal">
+        <div class="product-image placeholder">
+          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
+          <div class="ph-label">AR Puzzle: Animal!</div>
+          <div class="ph-spec">Box · 48 Pieces + AR</div>
+        </div>
+        <div class="product-body">
+          <div class="card-label">Smithsonian Spring 2026</div>
+          <h3>AR Puzzle:<br>Animal!</h3>
+          <div class="badge-row">
+            <span class="badge">48 Pieces</span>
+            <span class="badge">AR</span>
+          </div>
+          <p>The animal kingdom, unlockable through puzzle-solving. Snap together and watch creatures come alive.</p>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        </div>
+      </div>
+
+      <div class="product-card scroll-reveal">
+        <div class="product-image placeholder">
+          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
+          <div class="ph-label">AR Puzzle: Human Body!</div>
+          <div class="ph-spec">Box · 48 Pieces + AR</div>
+        </div>
+        <div class="product-body">
+          <div class="card-label">Smithsonian Spring 2026</div>
+          <h3>AR Puzzle:<br>Human Body!</h3>
+          <div class="badge-row">
+            <span class="badge">48 Pieces</span>
+            <span class="badge">AR</span>
+          </div>
+          <p>Anatomy made magical — build the puzzle and dive inside the human body in augmented reality.</p>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        </div>
+      </div>
+
+      <div class="product-card scroll-reveal">
+        <div class="product-image placeholder">
+          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
+          <div class="ph-label">AR Puzzle: Space!</div>
+          <div class="ph-spec">Box · 48 Pieces + AR</div>
+        </div>
+        <div class="product-body">
+          <div class="card-label">Smithsonian Spring 2026</div>
+          <h3>AR Puzzle:<br>Space!</h3>
+          <div class="badge-row">
+            <span class="badge">48 Pieces</span>
+            <span class="badge">AR</span>
+          </div>
+          <p>The universe as you've never seen it before. Puzzle-meets-planetarium with augmented reality overlays.</p>
+          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
+
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Free-standing tower · NatGeo + Smithsonian</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">NatGeo Floor Display</div>
+          <p class="trade-card-desc">Yellow-frame branded display anchoring the full STEM lineup — Globe Alive! centerpiece flanked by VR/MR Tier A SKUs and Smithsonian AR Puzzle entry tier.</p>
+        </div>
+      </div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · 11 SKUs · 3 tiers</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">NatGeo Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended STEM-aisle planogram with the full $19.99–$59.99 ladder — AR Puzzles entry, $39.99 VR core, $59.99 Globe Alive! centerpiece.</p>
+        </div>
+      </div>
     </div>
 
     <!-- ========== SEGMENT 3: MEDIA & PROOF ========== -->
@@ -3459,13 +3731,13 @@
           </div>
           <div class="stat-cell">
             <div class="stat-cell-label">SKU Count</div>
-            <div class="stat-cell-num">7</div>
-            <div class="stat-cell-sub">VR + Mixed Reality lineup</div>
+            <div class="stat-cell-num">11</div>
+            <div class="stat-cell-sub">VR · MR · AR Puzzles</div>
           </div>
           <div class="stat-cell">
             <div class="stat-cell-label">Price Range</div>
-            <div class="stat-cell-num">$39–60</div>
-            <div class="stat-cell-sub">$39.99 base · $59.99 Globe</div>
+            <div class="stat-cell-num">$19–60</div>
+            <div class="stat-cell-sub">$19.99 puzzle · $59.99 Globe</div>
           </div>
         </div>
       </div>
@@ -3517,11 +3789,11 @@
         </div>
         <span class="video-link-arrow">→</span>
       </a>
-      <a class="video-link" href="#VIDEO-natgeo-line-overview">
+      <a class="video-link" href="#VIDEO-natgeo-smithsonian-puzzles">
         <div class="video-link-icon"><svg><use href="#icon-youtube"/></svg></div>
         <div class="video-link-info">
-          <div class="video-link-title">Full Line Walkthrough</div>
-          <div class="video-link-meta">Trade · Buyer-facing</div>
+          <div class="video-link-title">Smithsonian AR Puzzles</div>
+          <div class="video-link-meta">YouTube · Scan-to-life demo</div>
         </div>
         <span class="video-link-arrow">→</span>
       </a>
@@ -3545,7 +3817,7 @@
         <h2 class="brand-title">Knowledge,<br>brought to life.</h2>
       </div>
       <p class="brand-description">
-        DK's legendary publishing paired with immersive VR. The original <em>Book Alive</em> line, a new mini format, Smithsonian AR puzzles, and ESPN + F1 licensed editions launching in 2026.
+        DK's legendary publishing paired with immersive VR. The original <em>Book Alive</em> line, a new mini format, and ESPN + F1 licensed editions launching in 2026.
       </p>
     </div>
 
@@ -3565,13 +3837,13 @@
       </div>
       <div class="brand-hero-content">
         <h3>The world's #1 illustrated reference publisher, paired with VR &amp; AR for the next generation.</h3>
-        <p>DK has been the gold standard in illustrated non-fiction for 50 years. The Abacus partnership extends that authority into immersive learning: the flagship <em>Book Alive</em> line ($49.99), the new <em>Book Alive Mini</em> format ($19.99) for entry-tier shoppers, Smithsonian AR puzzles, and licensed ESPN + F1 editions.</p>
-        <div class="pull-quote">A complete STEM aisle in one publisher partnership — four price tiers from $19.99 entry to $49.99 flagship, covering science, space, sports, geography, and animals.</div>
+        <p>DK has been the gold standard in illustrated non-fiction for 50 years. The Abacus partnership extends that authority into immersive learning: the flagship <em>Book Alive</em> line ($49.99), the new <em>Book Alive Mini</em> format ($19.99) for entry-tier shoppers, and licensed ESPN + F1 VR editions.</p>
+        <div class="pull-quote">A complete STEM aisle in one publisher partnership — three price tiers from $19.99 entry to $49.99 flagship, covering science, space, sports, geography, and animals.</div>
         <div class="brand-hero-meta">
-          <span class="badge solid"><span>4 Sub-Lines</span></span>
-          <span class="badge">14 SKUs Total</span>
+          <span class="badge solid"><span>3 Sub-Lines</span></span>
+          <span class="badge">10 SKUs Total</span>
           <span class="badge">$19.99 – $49.99</span>
-          <span class="badge">DK · Smithsonian · ESPN · F1</span>
+          <span class="badge">DK · ESPN · F1</span>
         </div>
       </div>
     </div>
@@ -3581,7 +3853,7 @@
       <span class="segment-marker-num">2</span>
       <span class="segment-marker-label">Products</span>
       <span class="segment-marker-line"></span>
-      <span class="segment-marker-label">14 SKUs · 4 Tiers</span>
+      <span class="segment-marker-label">10 SKUs · 3 Tiers</span>
     </div>
 
     <div class="product-grid">
@@ -3786,83 +4058,39 @@
           <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
         </div>
       </div>
+    </div>
 
-      <!-- TIER D: SMITHSONIAN AR PUZZLES -->
-      <div class="sub-divider scroll-reveal">
-        <span class="sub-divider-num">D</span>
-        <span class="sub-divider-title">Smithsonian AR Puzzles · Spring 2026</span>
-        <span class="sub-divider-meta">$19.99 Tier · 4 SKUs</span>
-      </div>
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
 
-      <div class="product-card scroll-reveal">
-        <div class="product-image placeholder">
-          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
-          <div class="ph-label">AR Puzzle: Dinosaur!</div>
-          <div class="ph-spec">Box · 48 Pieces + AR</div>
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Tower · Book Alive + Mini + Licensed</div>
         </div>
-        <div class="product-body">
-          <div class="card-label">Smithsonian Spring 2026</div>
-          <h3>AR Puzzle:<br>Dinosaur!</h3>
-          <div class="badge-row">
-            <span class="badge">48 Pieces</span>
-            <span class="badge">AR</span>
-          </div>
-          <p>Solve the puzzle, scan it, and watch a fully-rigged dinosaur emerge from the completed board.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">DK Floor Display</div>
+          <p class="trade-card-desc">DK-red branded display unit organizing all 10 SKUs by sub-line — Book Alive flagship, Mini format entry tier, and ESPN/F1 VR Headliners on the top shelf.</p>
         </div>
       </div>
-
-      <div class="product-card scroll-reveal">
-        <div class="product-image placeholder">
-          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
-          <div class="ph-label">AR Puzzle: Animal!</div>
-          <div class="ph-spec">Box · 48 Pieces + AR</div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · 10 SKUs · 3 tiers</div>
         </div>
-        <div class="product-body">
-          <div class="card-label">Smithsonian Spring 2026</div>
-          <h3>AR Puzzle:<br>Animal!</h3>
-          <div class="badge-row">
-            <span class="badge">48 Pieces</span>
-            <span class="badge">AR</span>
-          </div>
-          <p>The animal kingdom, unlockable through puzzle-solving. Snap together and watch creatures come alive.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
-        </div>
-      </div>
-
-      <div class="product-card scroll-reveal">
-        <div class="product-image placeholder">
-          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
-          <div class="ph-label">AR Puzzle: Human Body!</div>
-          <div class="ph-spec">Box · 48 Pieces + AR</div>
-        </div>
-        <div class="product-body">
-          <div class="card-label">Smithsonian Spring 2026</div>
-          <h3>AR Puzzle:<br>Human Body!</h3>
-          <div class="badge-row">
-            <span class="badge">48 Pieces</span>
-            <span class="badge">AR</span>
-          </div>
-          <p>Anatomy made magical — build the puzzle and dive inside the human body in augmented reality.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
-        </div>
-      </div>
-
-      <div class="product-card scroll-reveal">
-        <div class="product-image placeholder">
-          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
-          <div class="ph-label">AR Puzzle: Space!</div>
-          <div class="ph-spec">Box · 48 Pieces + AR</div>
-        </div>
-        <div class="product-body">
-          <div class="card-label">Smithsonian Spring 2026</div>
-          <h3>AR Puzzle:<br>Space!</h3>
-          <div class="badge-row">
-            <span class="badge">48 Pieces</span>
-            <span class="badge">AR</span>
-          </div>
-          <p>The universe as you've never seen it before. Puzzle-meets-planetarium with augmented reality overlays.</p>
-          <div class="price-tag"><span class="price-srp">SRP</span> <span>$19.99</span></div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">DK Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended STEM/reference shelf set with the $19.99 Mini entry tier driving conversion to the $49.99 Book Alive flagship and licensed VR headliners.</p>
         </div>
       </div>
     </div>
@@ -3879,7 +4107,7 @@
       <div class="stat-block">
         <div class="stat-block-header">
           <div class="stat-block-title">Brand Power · DK + Partners</div>
-          <div class="stat-block-meta">Licensors · DK / Smithsonian / ESPN / F1</div>
+          <div class="stat-block-meta">Licensors · DK / ESPN / F1</div>
         </div>
         <div class="stat-block-grid">
           <div class="stat-cell">
@@ -3889,11 +4117,11 @@
           </div>
           <div class="stat-cell">
             <div class="stat-cell-label">Total SKUs</div>
-            <div class="stat-cell-num">14</div>
-            <div class="stat-cell-sub">4 sub-lines · 4 price tiers</div>
+            <div class="stat-cell-num">10</div>
+            <div class="stat-cell-sub">3 sub-lines · 3 price tiers</div>
           </div>
           <div class="stat-cell">
-            <div class="stat-cell-label">Smithsonian Reach</div>
+            <div class="stat-cell-label">ESPN Reach</div>
             <div class="stat-cell-num tbd">[TBD]</div>
             <div class="stat-cell-sub">Licensor audience metric</div>
           </div>
@@ -3952,11 +4180,11 @@
         </div>
         <span class="video-link-arrow">→</span>
       </a>
-      <a class="video-link" href="#VIDEO-dk-puzzles">
+      <a class="video-link" href="#VIDEO-dk-espn">
         <div class="video-link-icon"><svg><use href="#icon-youtube"/></svg></div>
         <div class="video-link-info">
-          <div class="video-link-title">Smithsonian AR Puzzles</div>
-          <div class="video-link-meta">YouTube · Scan-to-life demo</div>
+          <div class="video-link-title">VR ESPN SportsCenter Demo</div>
+          <div class="video-link-meta">YouTube · Headliner reveal</div>
         </div>
         <span class="video-link-arrow">→</span>
       </a>
@@ -3998,11 +4226,11 @@
       </div>
       <div class="brand-hero-content">
         <h3>Party games engineered for the TikTok generation. Simple rules, instant laughs, viral moments.</h3>
-        <p>A curated label of party titles from three top studios — Dreamstar, Regrettable, and Barry &amp; Jason — plus an original VR title. Every game is built around a single principle: 5-second teach, 30-second laugh.</p>
+        <p>A curated label of party titles from three top studios — Dreamstar, Regrettable, and Barry &amp; Jason. Every game is built around a single principle: 5-second teach, 30-second laugh.</p>
         <div class="pull-quote">A category gap nobody else fills: TikTok-native party games at $9.99–$19.99 with built-in social-content hooks.</div>
         <div class="brand-hero-meta">
           <span class="badge solid"><span>3 Studio Partners</span></span>
-          <span class="badge">7 SKUs</span>
+          <span class="badge">6 SKUs</span>
           <span class="badge">$9.99 – $19.99</span>
           <span class="badge">Ages 4–18+</span>
         </div>
@@ -4014,7 +4242,7 @@
       <span class="segment-marker-num">2</span>
       <span class="segment-marker-label">Products</span>
       <span class="segment-marker-line"></span>
-      <span class="segment-marker-label">7 SKUs · 3 Studio Partners</span>
+      <span class="segment-marker-label">6 SKUs · 3 Studio Partners</span>
     </div>
 
     <div class="product-grid">
@@ -4125,22 +4353,39 @@
           <div class="price-tag"><span class="price-srp">RETAIL</span> <span>$19.99</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="product-card scroll-reveal">
-        <div class="product-image placeholder">
-          <div class="ph-icon"><svg><use href="#icon-package"/></svg></div>
-          <div class="ph-label">Cold Case VR</div>
-          <div class="ph-spec">Box · Original VR Title</div>
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
+
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Display · Party-aisle endcap · 6 SKUs</div>
         </div>
-        <div class="product-body">
-          <div class="card-label">Cold Case Series</div>
-          <h3>Cold Case<br>VR</h3>
-          <div class="badge-row">
-            <span class="badge">VR</span>
-            <span class="badge">Murder Mystery</span>
-          </div>
-          <p>A virtual reality murder mystery experience. Collect evidence, interview suspects, and crack the case.</p>
-          <div class="price-tag"><span class="price-srp">RETAIL</span> <span>TBD</span></div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Radical Floor Display</div>
+          <p class="trade-card-desc">Bold yellow-and-black endcap built for the party-game aisle — TikTok creator hooks, viral price points ($9.99–$19.99), and call-out signage for short-form content.</p>
+        </div>
+      </div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · 6 SKUs · 3 studio partners</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Radical Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended party/family-game shelf set with $9.99 impulse entry (Lick My Nachos) anchoring the line into $19.99 marquee SKUs.</p>
         </div>
       </div>
     </div>
@@ -4177,8 +4422,8 @@
           </div>
           <div class="stat-cell">
             <div class="stat-cell-label">Total SKUs</div>
-            <div class="stat-cell-num">7</div>
-            <div class="stat-cell-sub">Across 3 labels + 1 original</div>
+            <div class="stat-cell-num">6</div>
+            <div class="stat-cell-sub">Across 3 studio partners</div>
           </div>
         </div>
       </div>
@@ -4395,6 +4640,41 @@
           </div>
           <p>Turn-key display walls with vibrant magenta POP that anchor a full-category plush endcap.</p>
           <div class="price-tag"><span class="price-srp">TRADE</span> <span>INQUIRE</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TRADE · DISPLAY + PLANOGRAM ========== -->
+    <div class="segment-marker scroll-reveal" style="margin-top: 48px;">
+      <span class="segment-marker-num">·</span>
+      <span class="segment-marker-label">Trade</span>
+      <span class="segment-marker-line"></span>
+      <span class="segment-marker-label">Display + Planogram</span>
+    </div>
+
+    <div class="trade-display scroll-reveal">
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-display"/></svg>
+          <div class="ph-label">Floor Display</div>
+          <div class="ph-spec">Free-standing tower · Series 1 + Drops</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Hoodeez Floor Display</div>
+          <p class="trade-card-desc">Magenta-forward free-standing display tower for entryway and aisle-cap placement — Series 1 core mixed with rotating Super Rare and FIO drops to drive repeat trips.</p>
+        </div>
+      </div>
+      <div class="trade-card">
+        <div class="trade-card-image">
+          <svg><use href="#icon-planogram"/></svg>
+          <div class="ph-label">Planogram</div>
+          <div class="ph-spec">Shelf set · Core line + drop slots</div>
+        </div>
+        <div class="trade-card-body">
+          <div class="trade-card-tag">Merchandising</div>
+          <div class="trade-card-title">Hoodeez Shelf Planogram</div>
+          <p class="trade-card-desc">Recommended plush-aisle planogram complementing the Retail Wall Program — dedicated drop slot for refresh cadence and impulse-zone Panda/Monkey variant placement.</p>
         </div>
       </div>
     </div>
