@@ -1,0 +1,1215 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pudgy Penguins × Kung Fu Tea — 2026 Partnership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── Brand tokens ───────────────────────────────────────────────── */
+  :root{
+    --pengu-blue: #6691E5;       /* Pudgy cornflower */
+    --pengu-blue-deep: #3F6FCC;
+    --pengu-sky: #BEDDF7;        /* soft sky */
+    --pengu-cloud: #EAF4FF;      /* lightest sky */
+    --pengu-ink: #1B2230;        /* near-black with a blue tint */
+    --pengu-paper: #FFFFFF;
+    --pengu-cream: #FFF7E8;      /* warm cream */
+    --pengu-blush: #FFD7DA;
+    --pengu-yolk: #FFC233;       /* beak yellow */
+    --pengu-flame: #FF5A4E;      /* warm red */
+    --pengu-mint: #B6EBD6;
+    --pengu-violet: #C7B7F0;
+
+```
+--shadow-soft: 0 12px 40px -8px rgba(27, 34, 48, .18);
+--shadow-pop:  0 24px 60px -12px rgba(27, 34, 48, .28);
+--radius-lg: 28px;
+--radius-xl: 40px;
+
+--font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+--font-body: 'Inter', system-ui, sans-serif;
+```
+
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html, body{margin:0; padding:0; background:var(–pengu-cloud); color:var(–pengu-ink); font-family:var(–font-body); -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+body{font-size:17px; line-height:1.55;}
+
+h1,h2,h3,h4{font-family:var(–font-display); font-weight:800; letter-spacing:-.02em; line-height:.95; margin:0;}
+h1{font-size:clamp(3.5rem, 11vw, 9rem);}
+h2{font-size:clamp(2.5rem, 6vw, 5rem);}
+h3{font-size:clamp(1.5rem, 2.6vw, 2.4rem); letter-spacing:-.015em;}
+h4{font-size:1.1rem; letter-spacing:.04em; text-transform:uppercase; font-weight:700;}
+p{margin:0 0 1em;}
+
+.wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+@media (max-width:600px){ .wrap{padding:0 20px;} body{font-size:16px;} }
+
+/* ─── Scroll progress bar ───────────────────────────────────────── */
+#progress{
+position:fixed; top:0; left:0; height:5px; width:0%;
+background:linear-gradient(90deg, var(–pengu-flame), var(–pengu-yolk), var(–pengu-blue));
+z-index:1000; transition:width .08s linear;
+}
+/* ─── Top nav (sticky) ──────────────────────────────────────────── */
+nav.top{
+position:fixed; top:18px; left:50%; transform:translateX(-50%);
+z-index:999; padding:10px 18px; border-radius:999px;
+background:rgba(255,255,255,.78); backdrop-filter:blur(14px);
+border:1px solid rgba(27,34,48,.06); box-shadow:var(–shadow-soft);
+display:flex; gap:18px; align-items:center; font-size:13px; font-weight:600;
+}
+nav.top a{color:var(–pengu-ink); text-decoration:none; opacity:.7; transition:opacity .2s;}
+nav.top a:hover{opacity:1;}
+nav.top .dot{width:8px; height:8px; border-radius:50%; background:var(–pengu-flame); display:inline-block; margin-right:6px; animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.7}}
+@media(max-width:720px){ nav.top{display:none} }
+
+/* ─── Sections ──────────────────────────────────────────────────── */
+section{position:relative; padding:120px 0; overflow:hidden;}
+section.hero{padding:0; min-height:100vh; display:flex; align-items:center;}
+.label{display:inline-flex; align-items:center; gap:10px; padding:8px 18px; border-radius:999px;
+font-family:var(–font-display); font-weight:700; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;}
+.label .num{background:var(–pengu-ink); color:#fff; width:26px; height:26px; border-radius:50%; display:inline-grid; place-items:center; font-size:.78rem;}
+
+/* ─── HERO ──────────────────────────────────────────────────────── */
+.hero{
+background:
+radial-gradient(ellipse at 80% 20%, #FFE4A8 0%, transparent 55%),
+radial-gradient(ellipse at 10% 90%, var(–pengu-blush) 0%, transparent 50%),
+linear-gradient(180deg, #DCEEFF 0%, var(–pengu-sky) 100%);
+}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; width:100%;}
+@media(max-width:900px){ .hero-grid{grid-template-columns:1fr; padding-top:80px;} }
+
+.hero h1{
+font-size:clamp(3.2rem, 9.5vw, 8.6rem);
+line-height:.88;
+}
+.hero h1 .x{color:var(–pengu-flame); font-style:italic; display:inline-block;
+animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+
+.hero .kicker{font-family:var(–font-display); font-weight:700; font-size:1.05rem; letter-spacing:.18em; text-transform:uppercase; color:var(–pengu-blue-deep); margin-bottom:24px; display:flex; align-items:center; gap:10px;}
+.hero .kicker::before{content:””; width:36px; height:3px; background:var(–pengu-flame); border-radius:2px;}
+.hero .lede{font-size:clamp(1.05rem,1.4vw,1.25rem); max-width:520px; margin-top:28px; color:#3a4555;}
+
+.hero-penguin{
+position:relative; aspect-ratio:1/1; max-width:560px; margin-left:auto;
+}
+.hero-penguin img{
+width:100%; height:100%; object-fit:contain; border-radius:50%;
+background:#fff; box-shadow:var(–shadow-pop);
+animation:bob 5s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+
+.badge{
+position:absolute; background:#fff; padding:14px 18px; border-radius:20px;
+font-family:var(–font-display); font-weight:800; font-size:.95rem;
+box-shadow:var(–shadow-soft); border:2px solid var(–pengu-ink);
+display:flex; flex-direction:column; line-height:1.1;
+}
+.badge .big{font-size:1.5rem; color:var(–pengu-flame);}
+.badge.b1{top:6%; left:-4%; transform:rotate(-8deg);}
+.badge.b2{top:42%; right:-8%; transform:rotate(7deg);}
+.badge.b3{bottom:6%; left:8%; transform:rotate(-4deg);}
+@media(max-width:600px){ .badge.b2{right:-2%;} }
+
+.scroll-cue{
+position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+font-family:var(–font-display); font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+font-size:.78rem; color:var(–pengu-blue-deep); display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.scroll-cue .arrow{width:2px; height:36px; background:var(–pengu-blue-deep); border-radius:2px; animation:scrolldown 1.6s ease-in-out infinite;}
+@keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ─── Header strip stats (sticky-ish under hero) ────────────────── */
+.strip{
+background:var(–pengu-ink); color:#fff; padding:36px 0;
+position:relative; overflow:hidden;
+}
+.strip-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px; text-align:center;}
+.strip .num{font-family:var(–font-display); font-weight:800; font-size:clamp(1.8rem,3.4vw,2.8rem); line-height:1;}
+.strip .num.flame{color:var(–pengu-flame)}
+.strip .num.yolk{color:var(–pengu-yolk)}
+.strip .num.sky{color:var(–pengu-sky)}
+.strip .num.mint{color:var(–pengu-mint)}
+.strip .lbl{font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; opacity:.65; margin-top:8px;}
+@media(max-width:720px){.strip-grid{grid-template-columns:repeat(2,1fr); gap:24px}}
+
+/* infinite ticker */
+.ticker{position:absolute; bottom:8px; left:0; right:0; height:18px; opacity:.18; overflow:hidden; white-space:nowrap;}
+.ticker-track{display:inline-block; animation:scroll-x 40s linear infinite; font-family:var(–font-display); font-weight:800; font-size:14px; letter-spacing:.3em;}
+@keyframes scroll-x{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── PARTNERSHIP / what we’re building ────────────────────────── */
+.build{background:var(–pengu-cloud);}
+.build-head{display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:end; margin-bottom:60px;}
+@media(max-width:900px){ .build-head{grid-template-columns:1fr;} }
+.pillar-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media(max-width:900px){ .pillar-grid{grid-template-columns:1fr; gap:18px} }
+.pillar{
+background:#fff; border-radius:var(–radius-lg); padding:34px; box-shadow:var(–shadow-soft);
+border:1px solid rgba(27,34,48,.06); position:relative; overflow:hidden;
+transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+}
+.pillar:hover{transform:translateY(-6px); box-shadow:var(–shadow-pop);}
+.pillar .pill-num{
+font-family:var(–font-display); font-weight:800; font-size:5rem; line-height:1;
+position:absolute; top:-10px; right:14px; color:var(–pengu-cloud);
+transition:color .3s;
+}
+.pillar:nth-child(1) .pill-num{color:#FFE4E2}
+.pillar:nth-child(2) .pill-num{color:#FFEFC9}
+.pillar:nth-child(3) .pill-num{color:#D7E6FA}
+.pillar h3{font-size:1.4rem; position:relative; z-index:1; margin-bottom:14px;}
+.pillar p{font-size:.97rem; color:#4a5563; position:relative; z-index:1;}
+.pillar .tag{position:absolute; bottom:24px; left:34px; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:var(–pengu-blue-deep);}
+.pillar{padding-bottom:60px;}
+
+.terms{margin-top:48px; padding:18px 28px; background:#fff; border-radius:999px; box-shadow:var(–shadow-soft); display:inline-flex; flex-wrap:wrap; gap:24px; font-size:.88rem; font-weight:600;}
+.terms span{color:#3a4555;}
+.terms b{color:var(–pengu-flame); font-weight:800;}
+
+/* ─── TIMELINE ─────────────────────────────────────────────────── */
+.timeline{
+background:linear-gradient(180deg, var(–pengu-cloud) 0%, var(–pengu-sky) 100%);
+position:relative;
+}
+.tl-wrap{position:relative; padding-top:40px;}
+.tl-line{position:absolute; left:50%; top:120px; bottom:30px; width:4px; background:var(–pengu-ink); transform:translateX(-50%); border-radius:4px;}
+@media(max-width:900px){ .tl-line{left:24px;} }
+.tl-row{display:grid; grid-template-columns:1fr 80px 1fr; gap:0; align-items:center; margin-bottom:60px; position:relative;}
+.tl-row:nth-child(even) .tl-card{grid-column:3;}
+.tl-row:nth-child(even) .tl-spacer{grid-column:1;}
+.tl-row:nth-child(odd) .tl-card{grid-column:1; text-align:right;}
+.tl-row:nth-child(odd) .tl-spacer{grid-column:3;}
+.tl-dot{
+grid-column:2; width:60px; height:60px; border-radius:50%; background:#fff; border:4px solid var(–pengu-ink);
+display:grid; place-items:center; font-family:var(–font-display); font-weight:800; font-size:1rem; z-index:2; margin:0 auto;
+box-shadow:var(–shadow-soft);
+}
+.tl-row[data-tone=“hype”] .tl-dot{background:var(–pengu-sky)}
+.tl-row[data-tone=“launch”] .tl-dot{background:var(–pengu-flame); color:#fff}
+.tl-row[data-tone=“nycc”] .tl-dot{background:var(–pengu-yolk)}
+.tl-row[data-tone=“close”] .tl-dot{background:var(–pengu-mint)}
+.tl-card{
+background:#fff; padding:26px 30px; border-radius:var(–radius-lg); box-shadow:var(–shadow-soft);
+border:1px solid rgba(27,34,48,.06);
+}
+.tl-card h4{font-size:.78rem; letter-spacing:.16em; color:var(–pengu-blue-deep); margin-bottom:6px;}
+.tl-card .tl-date{font-family:var(–font-display); font-weight:800; font-size:1.6rem; margin-bottom:8px; line-height:1;}
+.tl-card p{font-size:.95rem; color:#4a5563; margin:0;}
+@media(max-width:900px){
+.tl-row{grid-template-columns:60px 1fr; gap:24px;}
+.tl-row:nth-child(odd) .tl-card,.tl-row:nth-child(even) .tl-card{grid-column:2; text-align:left;}
+.tl-row:nth-child(odd) .tl-spacer,.tl-row:nth-child(even) .tl-spacer{display:none;}
+.tl-dot{grid-column:1; margin:0;}
+}
+
+/* ─── FOUNDATION (national) ────────────────────────────────────── */
+.foundation{
+background:var(–pengu-ink); color:#fff;
+background-image:
+radial-gradient(circle at 10% 10%, rgba(102,145,229,.4) 0%, transparent 40%),
+radial-gradient(circle at 90% 80%, rgba(255,90,78,.25) 0%, transparent 40%);
+}
+.foundation h2{color:#fff;}
+.foundation .label{background:rgba(255,255,255,.08); color:#fff;}
+.found-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:48px;}
+@media(max-width:900px){ .found-grid{grid-template-columns:1fr;} }
+.stores-card{
+background:linear-gradient(140deg, var(–pengu-flame), #FF8472);
+border-radius:var(–radius-xl); padding:48px; color:#fff; position:relative; overflow:hidden;
+display:flex; flex-direction:column; justify-content:space-between;
+min-height:480px;
+}
+.stores-card .huge{font-family:var(–font-display); font-weight:800; font-size:clamp(8rem,18vw,14rem); line-height:.85; letter-spacing:-.05em;}
+.stores-card .label-mini{font-family:var(–font-display); font-weight:800; font-size:1.1rem; letter-spacing:.1em; text-transform:uppercase; line-height:1.2;}
+.stores-card .stats-mini{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding-top:24px; border-top:2px solid rgba(255,255,255,.25);}
+.stores-card .stats-mini .v{font-family:var(–font-display); font-weight:800; font-size:1.5rem; line-height:1;}
+.stores-card .stats-mini .l{font-size:.7rem; letter-spacing:.06em; opacity:.85; margin-top:4px;}
+.stores-card .floater{position:absolute; right:-30px; bottom:-30px; width:200px; opacity:.95;}
+
+.feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.feat{
+background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+padding:22px; border-radius:20px; transition:background .3s;
+}
+.feat:hover{background:rgba(255,255,255,.08)}
+.feat h5{font-family:var(–font-display); font-weight:800; font-size:1.05rem; margin:0 0 8px; display:flex; align-items:center; gap:8px;}
+.feat p{font-size:.85rem; opacity:.78; margin:0; line-height:1.45;}
+.dot-c{width:8px; height:8px; border-radius:50%;}
+.dot-c.flame{background:var(–pengu-flame)}
+.dot-c.yolk{background:var(–pengu-yolk)}
+.dot-c.sky{background:var(–pengu-sky)}
+.dot-c.mint{background:var(–pengu-mint)}
+
+/* ─── SCENARIOS / financials ───────────────────────────────────── */
+.scenarios{background:var(–pengu-cream);}
+.scenarios h2 .star{color:var(–pengu-flame);}
+.sku-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px;}
+@media(max-width:900px){ .sku-grid{grid-template-columns:1fr;} }
+.sku{
+background:#fff; border-radius:var(–radius-lg); padding:32px; position:relative;
+border:2px solid var(–pengu-ink); box-shadow:8px 8px 0 var(–pengu-ink);
+transition:transform .3s, box-shadow .3s;
+}
+.sku:hover{transform:translate(-3px,-3px); box-shadow:14px 14px 0 var(–pengu-ink);}
+.sku .ribbon{
+position:absolute; top:-14px; left:24px; padding:6px 14px; border-radius:999px;
+font-family:var(–font-display); font-weight:800; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+}
+.sku.premium .ribbon{background:var(–pengu-yolk); color:var(–pengu-ink);}
+.sku.standard .ribbon{background:var(–pengu-blue); color:#fff;}
+.sku.entry .ribbon{background:var(–pengu-mint); color:var(–pengu-ink);}
+.sku h3{font-size:1.4rem; margin-top:8px; margin-bottom:18px;}
+.sku .pengu-spot{width:90px; height:90px; border-radius:50%; overflow:hidden; background:var(–pengu-cloud); float:right; margin-left:14px;}
+.sku .pengu-spot img{width:100%; height:100%; object-fit:cover;}
+.sku table{width:100%; border-collapse:collapse; margin-top:8px;}
+.sku table td{padding:10px 0; border-bottom:1px dashed rgba(27,34,48,.12); font-size:.92rem;}
+.sku table td:last-child{text-align:right; font-family:var(–font-display); font-weight:800; font-size:1.05rem;}
+.sku table tr:last-child td{border-bottom:0; padding-top:14px; font-size:1rem;}
+.sku .gp{background:var(–pengu-mint); margin:14px -32px -32px; padding:18px 32px; border-radius:0 0 var(–radius-lg) var(–radius-lg); display:flex; justify-content:space-between; align-items:center; font-family:var(–font-display); font-weight:800;}
+.sku .gp .gp-val{font-size:1.6rem;}
+.sku .meta{font-size:.78rem; color:#5a6371; margin-top:14px; padding-top:14px; border-top:1px solid rgba(27,34,48,.08);}
+
+.totals{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px;}
+@media(max-width:900px){.totals{grid-template-columns:1fr}}
+.total-card{
+background:var(–pengu-ink); color:#fff; border-radius:var(–radius-lg); padding:30px 36px;
+display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
+}
+.total-card.featured{background:linear-gradient(135deg, var(–pengu-flame), #FF8472);}
+.total-card .label{background:rgba(255,255,255,.16); color:#fff;}
+.total-card .stack{display:grid; grid-template-columns:repeat(4,auto); gap:18px; font-size:.85rem; align-items:end;}
+.total-card .stack div{display:flex; flex-direction:column;}
+.total-card .stack .l{font-size:.7rem; opacity:.75; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px;}
+.total-card .stack .v{font-family:var(–font-display); font-weight:800; font-size:1.1rem;}
+.total-card .net{
+font-family:var(–font-display); font-weight:800; font-size:clamp(2rem,4vw,3rem); line-height:1; padding:20px 24px;
+background:rgba(255,255,255,.16); border-radius:18px; min-width:200px; text-align:right;
+}
+.total-card.featured .net{background:rgba(255,255,255,.24);}
+
+/* ─── NYCC ─────────────────────────────────────────────────────── */
+.nycc{
+background:linear-gradient(180deg, var(–pengu-flame) 0%, #B83025 100%); color:#fff;
+position:relative;
+}
+.nycc::before{
+content:””; position:absolute; inset:0; opacity:.08;
+background-image:repeating-linear-gradient(45deg, #fff 0 2px, transparent 2px 16px);
+pointer-events:none;
+}
+.nycc h2{color:#fff; position:relative;}
+.nycc-head{display:grid; grid-template-columns:1fr 1.3fr; gap:50px; align-items:center; margin-bottom:60px; position:relative;}
+@media(max-width:900px){.nycc-head{grid-template-columns:1fr}}
+.big-stat{
+background:rgba(255,255,255,.08); border:2px dashed rgba(255,255,255,.5); border-radius:var(–radius-xl);
+padding:36px; text-align:center;
+}
+.big-stat .v{font-family:var(–font-display); font-weight:800; font-size:clamp(4rem,9vw,7rem); line-height:.9;}
+.big-stat .l{font-size:.95rem; opacity:.85; letter-spacing:.04em; margin-top:10px;}
+.nycc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative;}
+@media(max-width:900px){.nycc-grid{grid-template-columns:1fr}}
+.nycc-cell{
+background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
+border-radius:var(–radius-lg); padding:24px; backdrop-filter:blur(6px);
+transition:transform .3s, background .3s;
+}
+.nycc-cell:hover{background:rgba(255,255,255,.18); transform:translateY(-4px);}
+.nycc-cell h5{font-family:var(–font-display); font-weight:800; font-size:1.1rem; margin:0 0 8px;}
+.nycc-cell .icon{
+width:42px; height:42px; border-radius:12px; background:var(–pengu-yolk); color:var(–pengu-ink);
+display:grid; place-items:center; font-family:var(–font-display); font-weight:800; font-size:1.2rem; margin-bottom:14px;
+}
+.nycc-cell p{font-size:.88rem; opacity:.82; margin:0; line-height:1.5;}
+
+.nycc-pengu{
+position:absolute; right:0; top:-40px; width:300px; transform:rotate(8deg);
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.3));
+}
+@media(max-width:900px){.nycc-pengu{display:none}}
+
+/* ─── PUDGY WORLD digital ──────────────────────────────────────── */
+.digital{background:linear-gradient(180deg, var(–pengu-cream) 0%, var(–pengu-blush) 100%);}
+.digital h2 .pct{color:var(–pengu-flame);}
+.funnel{
+display:grid; grid-template-columns:1fr 60px 1fr 60px 1fr; gap:0; align-items:center;
+margin-top:48px;
+}
+@media(max-width:900px){
+.funnel{grid-template-columns:1fr; gap:14px;}
+.funnel .arrow-step{transform:rotate(90deg); margin:8px auto;}
+}
+.step{
+background:#fff; border-radius:var(–radius-lg); padding:32px; text-align:center;
+box-shadow:var(–shadow-soft); border:2px solid var(–pengu-ink); position:relative;
+transition:transform .3s;
+}
+.step:hover{transform:translateY(-6px);}
+.step .v{font-family:var(–font-display); font-weight:800; font-size:clamp(2.6rem,5vw,4rem); line-height:.9; margin-bottom:8px;}
+.step .l{font-size:.95rem; color:#4a5563;}
+.step.s1 .v{color:var(–pengu-blue-deep);}
+.step.s2 .v{color:var(–pengu-flame);}
+.step.s3 .v{color:var(–pengu-blue);}
+.step .step-num{position:absolute; top:-14px; left:24px; background:var(–pengu-ink); color:#fff; font-family:var(–font-display); font-weight:800; padding:4px 12px; border-radius:999px; font-size:.78rem;}
+.arrow-step{font-family:var(–font-display); font-weight:800; font-size:2.4rem; text-align:center; color:var(–pengu-ink); opacity:.4;}
+
+.assumptions{margin-top:48px; background:#fff; border-radius:var(–radius-lg); padding:32px; border-left:6px solid var(–pengu-yolk);}
+.assumptions h4{margin-bottom:16px;}
+.assumptions dl{display:grid; gap:18px; margin:0;}
+.assumptions dt{font-family:var(–font-display); font-weight:800; font-size:1rem; margin-bottom:4px;}
+.assumptions dd{margin:0; font-size:.9rem; color:#4a5563; line-height:1.6;}
+.assumptions dt::before{content:attr(data-n); display:inline-grid; place-items:center; width:22px; height:22px; background:var(–pengu-flame); color:#fff; border-radius:50%; font-size:.72rem; margin-right:10px; vertical-align:1px;}
+
+/* ─── WALMART (the goal) ──────────────────────────────────────── */
+.walmart{background:#0071dc; color:#fff; position:relative; overflow:hidden;}
+.walmart::before{content:””; position:absolute; inset:0;
+background:radial-gradient(ellipse at 80% 20%, rgba(255,194,51,.4), transparent 50%),
+radial-gradient(ellipse at 10% 90%, rgba(0,0,0,.3), transparent 50%);
+pointer-events:none;
+}
+.walmart h2{color:#fff;}
+.walmart .label{background:rgba(255,255,255,.14); color:#fff;}
+.wm-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:56px; position:relative;}
+@media(max-width:900px){.wm-stats{grid-template-columns:repeat(2,1fr)}}
+.wm-stat{background:rgba(255,255,255,.1); padding:24px; border-radius:20px; border:1px solid rgba(255,255,255,.18);}
+.wm-stat .v{font-family:var(–font-display); font-weight:800; font-size:clamp(1.8rem,3.5vw,2.6rem); line-height:1; color:var(–pengu-yolk);}
+.wm-stat .l{font-size:.78rem; letter-spacing:.06em; opacity:.85; margin-top:8px;}
+
+.wm-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; position:relative;}
+@media(max-width:900px){.wm-grid{grid-template-columns:1fr}}
+.wm-card{
+background:#fff; color:var(–pengu-ink); border-radius:var(–radius-lg); padding:32px;
+position:relative; overflow:hidden;
+}
+.wm-card[data-stage=“1”]::before{content:””; position:absolute; top:0; left:0; right:0; height:6px; background:var(–pengu-yolk);}
+.wm-card[data-stage=“2”]::before{content:””; position:absolute; top:0; left:0; right:0; height:6px; background:var(–pengu-blue);}
+.wm-card[data-stage=“3”]::before{content:””; position:absolute; top:0; left:0; right:0; height:6px; background:var(–pengu-mint);}
+.wm-card .stage-label{display:flex; align-items:center; gap:10px; font-family:var(–font-display); font-weight:800; font-size:.85rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; color:var(–pengu-blue-deep);}
+.wm-card .stage-label .pill{background:var(–pengu-cloud); padding:4px 10px; border-radius:999px; font-size:.7rem;}
+.wm-card h3{font-size:1.5rem; margin-bottom:18px;}
+.wm-card ul{list-style:none; padding:0; margin:0;}
+.wm-card li{padding:10px 0 10px 26px; position:relative; font-size:.92rem; color:#3a4555; border-bottom:1px dashed rgba(27,34,48,.08);}
+.wm-card li:last-child{border:0;}
+.wm-card li::before{content:””; position:absolute; left:0; top:16px; width:14px; height:14px; border-radius:50%; background:var(–pengu-flame);}
+.wm-card[data-stage=“2”] li::before{background:var(–pengu-blue);}
+.wm-card[data-stage=“3”] li::before{background:var(–pengu-mint);}
+
+.wm-pengu{
+position:absolute; right:24px; top:-100px; width:240px; z-index:1;
+transform:rotate(-6deg); filter:drop-shadow(0 24px 50px rgba(0,0,0,.4));
+}
+@media(max-width:900px){.wm-pengu{display:none}}
+
+/* ─── FINANCIALS / cashflow ────────────────────────────────────── */
+.financials{background:var(–pengu-cloud);}
+.fin-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start; margin-top:48px;}
+@media(max-width:900px){.fin-grid{grid-template-columns:1fr;}}
+.chart-card{
+background:#fff; border-radius:var(–radius-lg); padding:32px; box-shadow:var(–shadow-soft);
+}
+.chart-card h4{margin-bottom:20px; color:var(–pengu-blue-deep);}
+.bars{display:flex; align-items:end; justify-content:space-around; height:340px; padding:10px 8px 0; border-bottom:2px solid var(–pengu-ink); position:relative;}
+.bar-group{display:flex; gap:6px; align-items:end; flex:1; justify-content:center;}
+.bar{
+width:46px; border-radius:8px 8px 0 0; position:relative;
+transition:height 1.2s cubic-bezier(.2,.8,.2,1); height:0;
+}
+.bar.gross{background:linear-gradient(180deg, var(–pengu-blue), var(–pengu-blue-deep));}
+.bar.profit{background:linear-gradient(180deg, var(–pengu-mint), #5DBF94);}
+.bar .v{position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-family:var(–font-display); font-weight:800; font-size:.78rem; white-space:nowrap;}
+.bar-labels{display:flex; justify-content:space-around; padding-top:10px; font-size:.78rem; font-weight:600; color:#4a5563;}
+.bar-labels span{flex:1; text-align:center;}
+.legend{display:flex; gap:18px; margin-top:18px; font-size:.82rem;}
+.legend-item{display:flex; align-items:center; gap:6px;}
+.legend-swatch{width:14px; height:14px; border-radius:4px;}
+.legend-swatch.gross{background:var(–pengu-blue);}
+.legend-swatch.profit{background:var(–pengu-mint);}
+
+.cashflow{display:flex; flex-direction:column; gap:14px;}
+.cf-row{
+background:#fff; border-radius:18px; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; gap:14px;
+box-shadow:var(–shadow-soft); border-left:5px solid #ccc;
+}
+.cf-row.out{border-left-color:var(–pengu-flame);}
+.cf-row.in{border-left-color:#5DBF94;}
+.cf-row.net{border-left-color:var(–pengu-yolk); background:var(–pengu-ink); color:#fff;}
+.cf-row .lbl{font-family:var(–font-display); font-weight:800; font-size:1rem;}
+.cf-row .desc{font-size:.78rem; opacity:.7; margin-top:2px;}
+.cf-row .val{font-family:var(–font-display); font-weight:800; font-size:1.2rem; white-space:nowrap;}
+.cf-row.out .val{color:var(–pengu-flame);}
+.cf-row.in .val{color:#3F9E72;}
+.cf-row.net .val{color:var(–pengu-yolk); font-size:1.6rem;}
+
+.margin-callout{
+margin-top:20px; padding:16px 22px; background:var(–pengu-yolk); border-radius:18px;
+font-family:var(–font-display); font-weight:800; font-size:.95rem; text-align:center; color:var(–pengu-ink);
+}
+
+/* ─── CRITICAL PATH ────────────────────────────────────────────── */
+.path{
+background:linear-gradient(180deg, var(–pengu-cloud), var(–pengu-blush));
+}
+.alert{
+background:var(–pengu-ink); color:#fff; padding:24px 32px; border-radius:var(–radius-lg);
+display:flex; align-items:center; gap:18px; margin-bottom:48px;
+border-left:8px solid var(–pengu-flame);
+}
+.alert .icon{width:46px; height:46px; min-width:46px; border-radius:50%; background:var(–pengu-flame); display:grid; place-items:center; font-family:var(–font-display); font-weight:800;}
+.alert p{margin:0; font-size:.98rem;}
+.alert b{color:var(–pengu-yolk);}
+.path-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+@media(max-width:900px){.path-grid{grid-template-columns:1fr}}
+.path-card{
+background:#fff; border-radius:var(–radius-lg); padding:28px; position:relative;
+box-shadow:var(–shadow-soft); border:1px solid rgba(27,34,48,.06);
+transition:transform .3s;
+}
+.path-card:hover{transform:translateY(-4px);}
+.path-card .num{
+width:42px; height:42px; border-radius:14px; background:var(–pengu-ink); color:#fff;
+display:grid; place-items:center; font-family:var(–font-display); font-weight:800; font-size:1.1rem; margin-bottom:14px;
+}
+.path-card[data-tone=“hot”] .num{background:var(–pengu-flame);}
+.path-card[data-tone=“warm”] .num{background:var(–pengu-yolk); color:var(–pengu-ink);}
+.path-card[data-tone=“cool”] .num{background:var(–pengu-blue);}
+.path-card .when{font-family:var(–font-display); font-weight:800; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(–pengu-blue-deep); margin-bottom:6px;}
+.path-card h3{font-size:1.2rem; margin-bottom:10px;}
+.path-card p{font-size:.9rem; color:#4a5563; margin:0;}
+
+/* ─── CLOSE ────────────────────────────────────────────────────── */
+.close{
+background:
+radial-gradient(ellipse at 70% 30%, var(–pengu-yolk) 0%, transparent 60%),
+radial-gradient(ellipse at 20% 80%, var(–pengu-flame) 0%, transparent 55%),
+linear-gradient(180deg, var(–pengu-blue-deep), var(–pengu-ink));
+color:#fff; min-height:90vh; display:flex; align-items:center;
+}
+.close-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:center;}
+@media(max-width:900px){.close-grid{grid-template-columns:1fr}}
+.close h2{color:#fff; font-size:clamp(2.6rem,7vw,5.6rem); line-height:.9; margin-bottom:24px;}
+.close h2 em{font-style:italic; color:var(–pengu-yolk); font-weight:800;}
+.close .takeaways{display:grid; gap:14px; margin-top:36px;}
+.close .ta{
+background:rgba(255,255,255,.08); padding:18px 22px; border-radius:18px; border:1px solid rgba(255,255,255,.16);
+display:flex; gap:16px; align-items:center; backdrop-filter:blur(6px);
+}
+.close .ta .v{font-family:var(–font-display); font-weight:800; font-size:1.6rem; color:var(–pengu-yolk); min-width:110px;}
+.close .ta .l{font-size:.95rem; opacity:.92;}
+.close .pengu-frame{
+aspect-ratio:1/1; max-width:480px; margin:0 auto; border-radius:50%; overflow:hidden;
+background:#fff; box-shadow:0 40px 80px rgba(0,0,0,.4);
+animation:bob 5s ease-in-out infinite;
+}
+.close .pengu-frame img{width:100%; height:100%; object-fit:cover;}
+.footer-mark{font-family:var(–font-display); font-weight:800; font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; opacity:.5; margin-top:60px; text-align:center;}
+
+/* ─── reveal-on-scroll ──────────────────────────────────────────── */
+.reveal{opacity:0; transform:translateY(40px); transition:opacity .8s ease, transform .8s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+.reveal:nth-child(2){transition-delay:.1s}
+.reveal:nth-child(3){transition-delay:.2s}
+.reveal:nth-child(4){transition-delay:.3s}
+
+/* ─── floating decorative penguins ─────────────────────────────── */
+.floater-pen{position:absolute; pointer-events:none; opacity:.85; filter:drop-shadow(0 12px 24px rgba(0,0,0,.18));}
+.floater-pen.f1{width:120px; top:18%; left:-30px; transform:rotate(-12deg); animation:float 7s ease-in-out infinite;}
+.floater-pen.f2{width:90px; bottom:8%; right:-20px; transform:rotate(14deg); animation:float 9s ease-in-out infinite reverse;}
+@media(max-width:600px){.floater-pen{display:none}}
+
+/* ─── reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+*{animation:none !important; transition:none !important;}
+.reveal{opacity:1; transform:none;}
+}
+</style>
+
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav class="top">
+  <span><span class="dot"></span>CONFIDENTIAL · 2026</span>
+  <a href="#partnership">Partnership</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#scenarios">Scenarios</a>
+  <a href="#walmart">Walmart</a>
+  <a href="#financials">Financials</a>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════════
+     HERO
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">A 2026 Partnership Proposal</div>
+      <h1>Pudgy<br><span class="x">×</span> Kung<br>Fu&nbsp;Tea</h1>
+      <p class="lede">A national multi-touchpoint experience merging the KFT boba-verse with the Pudgy Penguins ecosystem — amplified through New York Comic Con's 20th Anniversary, and pointed straight at Walmart.</p>
+    </div>
+    <div class="hero-penguin">
+      <img src="p420.png" alt="Pudgy Penguin character" loading="eager">
+      <div class="badge b1"><span>Run Window</span><span class="big">Oct&nbsp;1–15</span></div>
+      <div class="badge b2"><span>NYCC 20th</span><span class="big">Oct&nbsp;8–11</span></div>
+      <div class="badge b3"><span>Net Profit</span><span class="big">$106K</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll<div class="arrow"></div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     STAT STRIP
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="strip" style="padding:48px 0;">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div><div class="num flame" data-count="350">0</div><div class="lbl">+ KFT Stores</div></div>
+      <div><div class="num yolk" data-count="250">0</div><div class="lbl">K NYCC Attendees</div></div>
+      <div><div class="num sky" data-count="50">0</div><div class="lbl">K VIBES TCG Cards</div></div>
+      <div><div class="num mint" data-count="147">0</div><div class="lbl">% Pudgy World DAU</div></div>
+    </div>
+  </div>
+  <div class="ticker"><div class="ticker-track">PUDGY × KFT · NATIONAL ACTIVATION · NYCC 20TH ANNIVERSARY · WALMART · VIBES TCG · PUDGY WORLD · PUDGY × KFT · NATIONAL ACTIVATION · NYCC 20TH ANNIVERSARY · WALMART · VIBES TCG · PUDGY WORLD · </div></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     WHAT WE'RE BUILDING
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="build" id="partnership">
+  <div class="wrap">
+    <div class="build-head">
+      <div class="reveal">
+        <span class="label" style="background:#fff;"><span class="num">01</span>The Partnership</span>
+      </div>
+      <h2 class="reveal">What we're<br>building together.</h2>
+    </div>
+
+```
+<div class="pillar-grid">
+  <div class="pillar reveal">
+    <div class="pill-num">01</div>
+    <h3>National In-Store + Digital</h3>
+    <p>Two themed Pudgy drinks live in 350+ KFT stores. Digital amplification, sweepstakes, and KFT app integration on every screen.</p>
+    <div class="tag">Foundation Layer</div>
+  </div>
+  <div class="pillar reveal">
+    <div class="pill-num">02</div>
+    <h3>NYCC + NYC Localized</h3>
+    <p>20th Anniversary Walmart booth, costume pop-up, store takeover. KFT BOGO coupons handed at NYCC drive a treasure hunt for remaining TCG promo cards across Manhattan KFT stores.</p>
+    <div class="tag">Cultural Moment</div>
+  </div>
+  <div class="pillar reveal">
+    <div class="pill-num">03</div>
+    <h3>Walmart Cross-Promotion</h3>
+    <p>Shared exclusive collectible on Walmart.com + PP.com. KFT integrates Walmart branding throughout the activation. Data lands warm in Bentonville.</p>
+    <div class="tag">The Real Goal</div>
+  </div>
+</div>
+
+<div class="terms">
+  <span><b>COGS</b> = 25% of MSRP</span>
+  <span><b>Fee</b> 50/50 split — $50K signing + $50K completion</span>
+  <span><b>Lead time</b> 90 days</span>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     TIMELINE
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="timeline" id="timeline">
+  <div class="wrap">
+    <span class="label reveal" style="background:#fff;"><span class="num">02</span>Campaign Timeline</span>
+    <h2 class="reveal" style="margin-top:18px;">October 2026 —<br>the full picture.</h2>
+
+```
+<div class="tl-wrap">
+  <div class="tl-line"></div>
+
+  <div class="tl-row reveal" data-tone="hype">
+    <div class="tl-card">
+      <h4>Pre-Launch Hype</h4>
+      <div class="tl-date">Sep 15 – 30</div>
+      <p>Collab announcement + waitlist opens. Weekly character reveals. Zero product shown.</p>
+    </div>
+    <div class="tl-dot">15</div>
+    <div class="tl-spacer"></div>
+  </div>
+
+  <div class="tl-row reveal" data-tone="launch">
+    <div class="tl-card">
+      <h4>National Launch</h4>
+      <div class="tl-date">Oct 1 – 15</div>
+      <p>350+ stores live. Every cup carries a QR → Pudgy World unlock. VIBES TCG promo card while supplies last. Walmart.com collectible on sale.</p>
+    </div>
+    <div class="tl-dot">01</div>
+    <div class="tl-spacer"></div>
+  </div>
+
+  <div class="tl-row reveal" data-tone="nycc">
+    <div class="tl-card">
+      <h4>NYCC 20th Anniversary</h4>
+      <div class="tl-date">Oct 8 – 11</div>
+      <p>500-unit exclusive at $199.99. Film everything. Sell-out clock starts.</p>
+    </div>
+    <div class="tl-dot">08</div>
+    <div class="tl-spacer"></div>
+  </div>
+
+  <div class="tl-row reveal" data-tone="close">
+    <div class="tl-card">
+      <h4>Close + Debrief</h4>
+      <div class="tl-date">Oct 16 – 31</div>
+      <p>Recap published. Data presented to the Walmart buyer in person, in Bentonville.</p>
+    </div>
+    <div class="tl-dot">31</div>
+    <div class="tl-spacer"></div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     FOUNDATION (national rollout)
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="foundation">
+  <img src="p314.png" class="floater-pen f1" alt="">
+  <div class="wrap">
+    <span class="label reveal"><span class="num">03</span>Foundation Layer</span>
+    <h2 class="reveal" style="margin-top:18px;">The national<br>KFT rollout.</h2>
+
+```
+<div class="found-grid">
+  <div class="stores-card reveal">
+    <div>
+      <div class="huge">350+</div>
+      <div class="label-mini">KFT locations<br>nationwide</div>
+    </div>
+    <div class="stats-mini">
+      <div><div class="v">~875K</div><div class="l">Drink impressions</div></div>
+      <div><div class="v">14 days</div><div class="l">Promo window</div></div>
+      <div><div class="v">50K</div><div class="l">VIBES cards</div></div>
+    </div>
+  </div>
+
+  <div class="feature-grid reveal">
+    <div class="feat">
+      <h5><span class="dot-c flame"></span>2 Themed Pengu Drinks</h5>
+      <p>Character-driven flavors + Pudgy-inspired toppings. Designed photogenic — every cup is a content opportunity.</p>
+    </div>
+    <div class="feat">
+      <h5><span class="dot-c sky"></span>In-Store Signage + Digital</h5>
+      <p>Screen placements, KFT app push, 2–3 emails, 4–6 joint social posts, sweepstakes, app homepage carousel.</p>
+    </div>
+    <div class="feat">
+      <h5><span class="dot-c sky"></span>QR Code on Every Cup</h5>
+      <p>Pudgy World digital unlock printed on every branded cup. No scarcity. Drives DAU at $0 CAC.</p>
+    </div>
+    <div class="feat">
+      <h5><span class="dot-c yolk"></span>VIBES TCG Promo Card</h5>
+      <p>Exclusive Pudgy VIBES card while supplies last. 50K total nationally. Scarcity drives urgency.</p>
+    </div>
+    <div class="feat">
+      <h5><span class="dot-c yolk"></span>Co-Branded Sweepstakes</h5>
+      <p>Runs Oct 1–15 alongside the national program. Drives trial, repeat purchase, and digital engagement via the KFT app.</p>
+    </div>
+    <div class="feat">
+      <h5><span class="dot-c flame"></span>~143 TCG Cards / Store</h5>
+      <p>50K cards spread across 350+ stores. First-come scarcity. NYCC BOGO coupons send attendees hunting at Manhattan KFT.</p>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SCENARIOS
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="scenarios" id="scenarios">
+  <div class="wrap">
+    <span class="label reveal" style="background:#fff;"><span class="num">04</span>Priority 01 · Walmart + Collectible</span>
+    <h2 class="reveal" style="margin-top:18px;">Two national<br>scenarios <span class="star">★</span></h2>
+
+```
+<div class="sku-grid">
+  <div class="sku premium reveal">
+    <div class="ribbon">NYCC Exclusive</div>
+    <div class="pengu-spot"><img src="p7625.png" alt=""></div>
+    <h3>The flagship<br>premium drop.</h3>
+    <table>
+      <tr><td>Units</td><td>500</td></tr>
+      <tr><td>MSRP</td><td>$199.99</td></tr>
+      <tr><td>COGS / unit</td><td>$50.00</td></tr>
+      <tr><td>Gross Revenue</td><td>$99,995</td></tr>
+    </table>
+    <div class="gp">Gross Profit <span class="gp-val">$74,995</span></div>
+    <div class="meta">Walmart booth only · Oct 8–11 only</div>
+  </div>
+
+  <div class="sku standard reveal">
+    <div class="ribbon">Scenario A</div>
+    <div class="pengu-spot"><img src="p1585.png" alt=""></div>
+    <h3>Mid-tier national<br>collectible.</h3>
+    <table>
+      <tr><td>Units</td><td>1,750</td></tr>
+      <tr><td>MSRP</td><td>$99.99</td></tr>
+      <tr><td>COGS / unit</td><td>$25.00</td></tr>
+      <tr><td>Gross Revenue</td><td>$174,983</td></tr>
+    </table>
+    <div class="gp">Gross Profit <span class="gp-val">$131,233</span></div>
+    <div class="meta">Walmart.com + PP.com · Oct 1–15</div>
+  </div>
+
+  <div class="sku entry reveal">
+    <div class="ribbon">Scenario B</div>
+    <div class="pengu-spot"><img src="p100.png" alt=""></div>
+    <h3>Entry-tier<br>volume play.</h3>
+    <table>
+      <tr><td>Units</td><td>3,000</td></tr>
+      <tr><td>MSRP</td><td>$59.99</td></tr>
+      <tr><td>COGS / unit</td><td>$15.00</td></tr>
+      <tr><td>Gross Revenue</td><td>$179,970</td></tr>
+    </table>
+    <div class="gp">Gross Profit <span class="gp-val">$134,978</span></div>
+    <div class="meta">Walmart.com + PP.com · Oct 1–15</div>
+  </div>
+</div>
+
+<div class="totals">
+  <div class="total-card featured reveal">
+    <div>
+      <span class="label">Scenario A Total</span>
+      <div class="stack" style="margin-top:14px;">
+        <div><span class="l">Revenue</span><span class="v">$274,978</span></div>
+        <div><span class="l">COGS</span><span class="v">−$68,750</span></div>
+        <div><span class="l">Gross Profit</span><span class="v">$206,228</span></div>
+        <div><span class="l">KFT Fee</span><span class="v">−$100,000</span></div>
+      </div>
+    </div>
+    <div class="net">$106,228<div style="font-size:.6rem; opacity:.85; letter-spacing:.1em; margin-top:4px;">NET PROFIT</div></div>
+  </div>
+
+  <div class="total-card reveal">
+    <div>
+      <span class="label">Scenario B Total</span>
+      <div class="stack" style="margin-top:14px;">
+        <div><span class="l">Revenue</span><span class="v">$279,965</span></div>
+        <div><span class="l">COGS</span><span class="v">−$54,998</span></div>
+        <div><span class="l">Gross Profit</span><span class="v">$224,967</span></div>
+        <div><span class="l">KFT Fee</span><span class="v">−$100,000</span></div>
+      </div>
+    </div>
+    <div class="net">$124,967<div style="font-size:.6rem; opacity:.85; letter-spacing:.1em; margin-top:4px;">NET PROFIT</div></div>
+  </div>
+</div>
+<p style="text-align:center; margin-top:24px; font-size:.85rem; color:#5a6371;">COGS = 25% of MSRP across all scenarios</p>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     NYCC
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="nycc">
+  <div class="wrap">
+    <span class="label reveal" style="background:rgba(255,255,255,.14); color:#fff;"><span class="num" style="background:#fff; color:var(--pengu-flame);">05</span>Priority 02 · NYCC</span>
+    <h2 class="reveal" style="margin-top:18px;">NYCC —<br>20th Anniversary.</h2>
+
+```
+<div class="nycc-head">
+  <div class="big-stat reveal">
+    <div class="v">250K+</div>
+    <div class="l">NYCC 2025 attendees · 20th anniversary likely larger</div>
+  </div>
+  <div class="reveal">
+    <h3 style="color:#fff; font-size:2.2rem; margin-bottom:14px;">Oct 8–11</h3>
+    <p style="font-size:1.05rem; opacity:.92; max-width:480px;">4 days · Javits Center, NYC · 20th Anniversary · Highest-profile NYCC in history. Every metric we capture here lives on the buyer's desk in November.</p>
+  </div>
+</div>
+
+<img src="p7625.png" class="nycc-pengu" alt="">
+
+<div class="nycc-grid">
+  <div class="nycc-cell reveal">
+    <div class="icon">$</div>
+    <h5>$199.99 Exclusive Drop</h5>
+    <p>Walmart booth only. 500 units. Track + announce sell-out time. The headline data point for 2027.</p>
+  </div>
+  <div class="nycc-cell reveal">
+    <div class="icon">⌖</div>
+    <h5>KFT BOGO + Treasure Hunt</h5>
+    <p>BOGO coupons handed to every Pudgy merch buyer at NYCC. Drives a treasure hunt for remaining VIBES cards at Manhattan KFT before Oct 15.</p>
+  </div>
+  <div class="nycc-cell reveal">
+    <div class="icon">∞</div>
+    <h5>Pengu Costume Pop-Up</h5>
+    <p>KFT near NYU. Drink sampling, costume appearance, social content. Target one viral moment per day.</p>
+  </div>
+  <div class="nycc-cell reveal">
+    <div class="icon">▣</div>
+    <h5>NYC KFT Store Takeover</h5>
+    <p>Special in-store assets + plush bouquet. Manhattan KFT becomes a destination for NYCC week.</p>
+  </div>
+  <div class="nycc-cell reveal">
+    <div class="icon">⌬</div>
+    <h5>20+ Creator Kits Seeded</h5>
+    <p>Pre-seeded to NYCC-attending influencers before the show opens. Earned media from day one.</p>
+  </div>
+  <div class="nycc-cell reveal">
+    <div class="icon">⚑</div>
+    <h5>Geotargeted Digital</h5>
+    <p>KFT app push + geo-targeted emails for Manhattan, Oct 8–11. Drives urgency before the Oct 15 deadline.</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     PUDGY WORLD digital
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="digital">
+  <img src="p4422.png" class="floater-pen f2" alt="">
+  <div class="wrap">
+    <span class="label reveal" style="background:#fff;"><span class="num">06</span>Priority 03 · Digital Layer</span>
+    <h2 class="reveal" style="margin-top:18px;">Pudgy World —<br>plus <span class="pct">+147%</span> DAU.</h2>
+    <p class="reveal" style="max-width:640px; font-size:1.1rem; color:#3a4555;">Projected Pudgy World DAU growth from one 15-day KFT promotion. Current DAU: 15,000 confirmed. Projected new users: ~22K at $0 CAC.</p>
+
+```
+<div class="funnel">
+  <div class="step s1 reveal">
+    <div class="step-num">1</div>
+    <div class="v">~250K</div>
+    <div class="l">Themed drink purchases<br><small>(QR unlock on every cup)</small></div>
+  </div>
+  <div class="arrow-step reveal">→</div>
+  <div class="step s2 reveal">
+    <div class="step-num">2</div>
+    <div class="v">50K</div>
+    <div class="l">VIBES TCG promo cards<br><small>(while supplies last)</small></div>
+  </div>
+  <div class="arrow-step reveal">→</div>
+  <div class="step s3 reveal">
+    <div class="step-num">3</div>
+    <div class="v">~22K</div>
+    <div class="l">Pudgy World new users<br><small>(QR redemption est.)</small></div>
+  </div>
+</div>
+
+<div class="assumptions reveal">
+  <h4>Assumptions + methodology</h4>
+  <dl>
+    <div>
+      <dt data-n="1">~250K themed drink purchases</dt>
+      <dd>350 stores × ~250 drinks/day avg × 14 days ≈ 1.2M total transactions. Themed drinks conservatively estimated at 10–20% of orders ≈ 175K–350K. Midpoint used: ~250K. This is modeled — KFT has not provided transaction data. Each purchase receives a QR code on the cup.</dd>
+    </div>
+    <div>
+      <dt data-n="2">50K TCG promo cards</dt>
+      <dd>Confirmed production figure. ~143 cards per store across 350+ locations. Distributed while supplies last — independent of the QR unlock, which appears on every cup.</dd>
+    </div>
+    <div>
+      <dt data-n="3">~22K Pudgy World new users</dt>
+      <dd>~250K eligible purchases × ~9% estimated QR redemption rate. Conservative benchmark: QR-linked GWP campaigns in CPG/F&B typically see 1–5% scan-to-redeem. Upside at 5% ≈ 12.5K users. Downside at 1% ≈ 2.5K. The +147% headline uses the 22K midpoint against confirmed 15K DAU.</dd>
+    </div>
+  </dl>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     WALMART
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="walmart" id="walmart">
+  <img src="p2336.png" class="wm-pengu" alt="">
+  <div class="wrap">
+    <span class="label reveal"><span class="num">07</span>Walmart</span>
+    <h2 class="reveal" style="margin-top:18px;">What we're<br>building toward.</h2>
+
+```
+<div class="wm-stats" style="margin-top:48px;">
+  <div class="wm-stat reveal"><div class="v">3,100</div><div class="l">Walmart doors today</div></div>
+  <div class="wm-stat reveal"><div class="v">$13M+</div><div class="l">Retail sales to date</div></div>
+  <div class="wm-stat reveal"><div class="v">2M+</div><div class="l">Units sold</div></div>
+  <div class="wm-stat reveal"><div class="v">Shared</div><div class="l">Exclusive on Walmart.com</div></div>
+</div>
+
+<div class="wm-grid">
+  <div class="wm-card reveal" data-stage="1">
+    <div class="stage-label">NYCC — The Live Test <span class="pill">Oct 8–11</span></div>
+    <h3>Prove the concept, on the floor.</h3>
+    <ul>
+      <li>500-unit exclusive at $199.99 — Walmart booth only</li>
+      <li>Track sell-out speed publicly</li>
+      <li>$99.99 national edition live on Walmart.com simultaneously</li>
+      <li>Every metric captured for the buyer conversation</li>
+    </ul>
+  </div>
+  <div class="wm-card reveal" data-stage="2">
+    <div class="stage-label">Post-NYCC — The Data <span class="pill">Oct 16–31</span></div>
+    <h3>Package the proof.</h3>
+    <ul>
+      <li>Sell-out time on the $199.99 exclusive</li>
+      <li>Walmart.com sell-through rate + conversion</li>
+      <li>50K TCG card distribution across 350+ stores</li>
+      <li>Present in person in Bentonville</li>
+    </ul>
+  </div>
+  <div class="wm-card reveal" data-stage="3">
+    <div class="stage-label">2027 — The Next Step <span class="pill">Spring or Fall '27</span></div>
+    <h3>Open the category.</h3>
+    <ul>
+      <li>Collectibles category conversation with the buyer</li>
+      <li>Spring '27 earliest / Fall '27 most likely</li>
+      <li>NYCC data <em>is</em> the entire pitch</li>
+      <li>Execute October perfectly — the meeting books itself</li>
+    </ul>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     FINANCIALS
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="financials" id="financials">
+  <div class="wrap">
+    <span class="label reveal" style="background:#fff;"><span class="num">08</span>Financials</span>
+    <h2 class="reveal" style="margin-top:18px;">Revenue, margin<br>+ cash flow.</h2>
+
+```
+<div class="fin-grid">
+  <div class="chart-card reveal">
+    <h4>Revenue & Gross Profit by SKU</h4>
+    <div class="bars" id="bars">
+      <div class="bar-group">
+        <div class="bar gross" data-h="100"><span class="v">$99,995</span></div>
+        <div class="bar profit" data-h="75"><span class="v">$74,995</span></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar gross" data-h="175"><span class="v">$174,983</span></div>
+        <div class="bar profit" data-h="131"><span class="v">$131,233</span></div>
+      </div>
+      <div class="bar-group">
+        <div class="bar gross" data-h="180"><span class="v">$179,970</span></div>
+        <div class="bar profit" data-h="135"><span class="v">$134,978</span></div>
+      </div>
+    </div>
+    <div class="bar-labels">
+      <span>NYCC Exclusive</span><span>Scenario A</span><span>Scenario B</span>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><span class="legend-swatch gross"></span>Gross Revenue</span>
+      <span class="legend-item"><span class="legend-swatch profit"></span>Gross Profit</span>
+    </div>
+  </div>
+
+  <div class="cashflow reveal">
+    <div class="cf-row out">
+      <div><div class="lbl">At Signing</div><div class="desc">First fee payment + production deposit (~$17K)</div></div>
+      <div class="val">−$50,000</div>
+    </div>
+    <div class="cf-row out">
+      <div><div class="lbl">Aug 2026</div><div class="desc">Balance of production COGS paid to factory</div></div>
+      <div class="val">−$51,750</div>
+    </div>
+    <div class="cf-row in">
+      <div><div class="lbl">Oct 1–15</div><div class="desc">Gross revenue from both SKUs as units sell through</div></div>
+      <div class="val">+$274,978</div>
+    </div>
+    <div class="cf-row out">
+      <div><div class="lbl">Oct Completion</div><div class="desc">Second KFT fee payment on program delivery</div></div>
+      <div class="val">−$50,000</div>
+    </div>
+    <div class="cf-row net">
+      <div><div class="lbl">Net Position</div><div class="desc">After all fees + COGS · positive by end of October</div></div>
+      <div class="val">$106,228</div>
+    </div>
+    <div class="margin-callout">75% gross margin holds across all scenarios — COGS scales with MSRP</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     CRITICAL PATH
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="path">
+  <div class="wrap">
+    <span class="label reveal" style="background:#fff;"><span class="num">09</span>Critical Path</span>
+    <h2 class="reveal" style="margin-top:18px;">Action items<br>after Monday.</h2>
+
+```
+<div class="alert reveal" style="margin-top:48px;">
+  <div class="icon">!</div>
+  <p><b>90-day production lead time.</b> Deal must close in June for an Oct 1 launch. Every week of delay is a week of risk.</p>
+</div>
+
+<div class="path-grid">
+  <div class="path-card reveal" data-tone="hot">
+    <div class="num">1</div>
+    <div class="when">June 2026</div>
+    <h3>Close the KFT Deal</h3>
+    <p>Non-negotiable for an Oct 1 launch. Every week of delay compresses the production timeline.</p>
+  </div>
+  <div class="path-card reveal" data-tone="hot">
+    <div class="num">2</div>
+    <div class="when">July 2, 2026</div>
+    <h3>Place Production Order</h3>
+    <p>Both SKUs ordered simultaneously. 500 premium + 1,750 standard. Confirm factory can run both in parallel.</p>
+  </div>
+  <div class="path-card reveal" data-tone="cool">
+    <div class="num">3</div>
+    <div class="when">Before Oct 1</div>
+    <h3>Brief the Walmart Buyer</h3>
+    <p>Calendar the post-NYCC debrief NOW. Data lands warm in a pre-booked meeting, not cold.</p>
+  </div>
+  <div class="path-card reveal" data-tone="cool">
+    <div class="num">4</div>
+    <div class="when">Aug 1, 2026</div>
+    <h3>Pudgy World Integration</h3>
+    <p>Digital layer separate from TCG card GWP. In-game unlock mechanic needs build + test. Separate tech workstream.</p>
+  </div>
+  <div class="path-card reveal" data-tone="warm">
+    <div class="num">5</div>
+    <div class="when">Aug 15, 2026</div>
+    <h3>Creative + Waitlist Prep</h3>
+    <p>Sep 15 tease assets, waitlist landing page, announcement creative. 6-week minimum production lead.</p>
+  </div>
+  <div class="path-card reveal" data-tone="warm">
+    <div class="num">6</div>
+    <div class="when">This Week</div>
+    <h3>Confirm Working Capital</h3>
+    <p>$50K signing fee + ~$17–34K production deposit needed at deal close. Finance team must be aligned.</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     CLOSE
+═════════════════════════════════════════════════════════════════ -->
+
+<section class="close">
+  <div class="wrap">
+    <div class="close-grid">
+      <div>
+        <span class="label reveal" style="background:rgba(255,255,255,.14); color:#fff;"><span class="num" style="background:var(--pengu-yolk); color:var(--pengu-ink);">10</span>The Opportunity</span>
+        <h2 class="reveal" style="margin-top:24px;">$106K net.<br>+147% DAU.<br>One <em>doorway</em><br>into Walmart.</h2>
+        <p class="reveal" style="font-size:1.15rem; opacity:.9; max-width:560px;">All from one 15-day boba tea partnership.</p>
+
+```
+    <div class="takeaways">
+      <div class="ta reveal"><div class="v">$106K</div><div class="l">Net profit, positive by end of October</div></div>
+      <div class="ta reveal"><div class="v">+147%</div><div class="l">Pudgy World DAU growth from 15-day promo</div></div>
+      <div class="ta reveal"><div class="v">3,100</div><div class="l">Walmart doors waiting on the data</div></div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="pengu-frame">
+      <img src="p5555.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="footer-mark">Pudgy Penguins × Kung Fu Tea · Confidential — Cross-Departmental Review · 2026</div>
+```
+
+  </div>
+</section>
+
+<script>
+  // ─── Scroll progress
+  const progress = document.getElementById('progress');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progress.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ─── Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ─── Animated count-up for stat strip
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      let cur = 0;
+      const steps = 40;
+      const inc = target / steps;
+      const tick = () => {
+        cur += inc;
+        if (cur >= target){ el.textContent = target; return; }
+        el.textContent = Math.floor(cur);
+        requestAnimationFrame(tick);
+      };
+      tick();
+      countIO.unobserve(el);
+    });
+  }, {threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+  // ─── Bar chart animate-in
+  const barIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      document.querySelectorAll('#bars .bar').forEach(bar => {
+        const h = parseFloat(bar.dataset.h);
+        // scale: 180 (max) → 90% of 340px
+        const px = (h / 180) * 300;
+        bar.style.height = px + 'px';
+      });
+      barIO.unobserve(e.target);
+    });
+  }, {threshold:.3});
+  const barsEl = document.getElementById('bars');
+  if (barsEl) barIO.observe(barsEl);
+</script>
+
+</body>
+</html>
